@@ -4,3 +4,9 @@ C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\
 C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\obj\Release\BibliotecaDeClasses.csproj.CoreCompileInputs.cache
 C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\obj\Release\BibliotecaDeClasses.dll
 C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\obj\Release\BibliotecaDeClasses.pdb
+E:\Development\workspace\BibliotecaDeClasses\BibliotecaDeClasses\bin\Release\BibliotecaDeClasses.dll
+E:\Development\workspace\BibliotecaDeClasses\BibliotecaDeClasses\bin\Release\BibliotecaDeClasses.pdb
+E:\Development\workspace\BibliotecaDeClasses\BibliotecaDeClasses\obj\Release\BibliotecaDeClasses.csprojAssemblyReference.cache
+E:\Development\workspace\BibliotecaDeClasses\BibliotecaDeClasses\obj\Release\BibliotecaDeClasses.csproj.CoreCompileInputs.cache
+E:\Development\workspace\BibliotecaDeClasses\BibliotecaDeClasses\obj\Release\BibliotecaDeClasses.dll
+E:\Development\workspace\BibliotecaDeClasses\BibliotecaDeClasses\obj\Release\BibliotecaDeClasses.pdb
