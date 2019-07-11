@@ -1,0 +1,6 @@
+C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\bin\Debug\BibliotecaDeClasses.dll
+C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\bin\Debug\BibliotecaDeClasses.pdb
+C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\obj\Debug\BibliotecaDeClasses.csprojAssemblyReference.cache
+C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\obj\Debug\BibliotecaDeClasses.csproj.CoreCompileInputs.cache
+C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\obj\Debug\BibliotecaDeClasses.dll
+C:\Users\Gustavo Fernandes\source\repos\BibliotecaDeClasses\BibliotecaDeClasses\obj\Debug\BibliotecaDeClasses.pdb
