@@ -9,24 +9,61 @@ namespace BibliotecaDeClasses.DB
 {
     public class ConnectionFactory
     {
-        private static MySqlConnection _conexao = null;
+        public MySqlConnection Conexao { get; private set; }
 
-        public static MySqlConnection Connetion()
+        public ConnectionFactory(string sever, string port, string user, string password, string dataBase)
         {
+            Conexao = Connetion(sever, port, user, password, dataBase);
+        }
+
+        private MySqlConnection Connetion(string servidor, string porta, string usuario, string senha, string nomeBD)
+        {
+            MySqlConnection conexao = null;
+
+            if (string.IsNullOrEmpty(porta))
+                porta = "3306";
+
+            if (string.IsNullOrEmpty(servidor))
+                servidor = "localhost";
+
             try
             {
-                var server = "server=localhost";
-                var porta = "port=3306";
-                var userid = "User id=root";
-                var password = "password=root";
-                var database = "database=aplicacao_desck";
-                _conexao = new MySqlConnection($"{server};{porta};{userid};{database}; {password}");
+                var server = $"server={servidor}";
+                var port = $"port={porta}";
+                var userid = $"User id={usuario}";
+                var passwordId = $"password={senha}";
+                var database = $"database={nomeBD}";
+                conexao = new MySqlConnection($"{server};{port};{userid};{database}; {passwordId}");
             }
             catch (MySqlException e)
             {
             }
 
-            return _conexao;
+            return conexao;
+        }
+
+        public MySqlConnection AbreConexaoBD()
+        {
+            try
+            {
+                Conexao.Open();
+            }
+            finally
+            {
+            }
+
+            return Conexao;
+        }
+
+        public void FechaConexaoBD()
+        {
+            try
+            {
+                Conexao.Close();
+            }
+            finally
+            {
+            }
         }
     }
 }
