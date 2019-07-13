@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,40 @@ namespace BibliotecaDeClasses.DB
             Conexao = Connetion(sever, port, user, password, dataBase);
         }
 
+        public MySqlCommand CrieComando(string comandoSQL)
+        {
+            AbreConexaoBD();
+            var command = Conexao.CreateCommand();
+            command.CommandText = comandoSQL;
+            return command;
+        }
+
+        public DbParameter CrieParametro(string parametro, object valor)
+        {
+            return new MySqlParameter(parametro, ConverteParametro(valor));
+        }
+
+        private object ConverteParametro(object valor)
+        {
+            var parametro = valor;
+            if (valor == null)
+                parametro = DBNull.Value;
+            if (valor is bool)
+                parametro = (bool)valor ? "S" : "N";
+            if (valor is float)
+                parametro = (double)(float)valor;
+            if (valor is DateTime)
+                parametro = Convert.ToInt32(((DateTime)valor).ToString("ddMMyyyy"));
+            if (valor is TimeSpan)
+                parametro = Convert.ToInt32(new DateTime(((TimeSpan)valor).Ticks).ToString("HHmm"));
+
+            return parametro;
+        }
+
+        /*
+         * -Servidor: se não for informado, como padrão esta confiugurado localhost!
+         * -Porta: se não for informada, como padrão vem 3306!
+         */
         private MySqlConnection Connetion(string servidor, string porta, string usuario, string senha, string nomeBD)
         {
             MySqlConnection conexao = null;
@@ -42,7 +77,7 @@ namespace BibliotecaDeClasses.DB
             return conexao;
         }
 
-        private MySqlConnection AbreConexaoBD()
+        private void AbreConexaoBD()
         {
             try
             {
@@ -51,7 +86,6 @@ namespace BibliotecaDeClasses.DB
             finally
             {
             }
-
             return Conexao;
         }
 
