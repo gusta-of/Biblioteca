@@ -35,7 +35,10 @@ namespace FernandesDLL.Model
                 }
                 else if (keySize < maxSize)
                 {
-                    int validSize = (keySize <= minSize) ? minSize : (keySize - keySize % skipSize) + skipSize;
+                    int validSize = (keySize <= minSize) 
+                        ? minSize 
+                        : (keySize - keySize % skipSize) + skipSize;
+
                     if (keySize < validSize)
                     {
                         key = key.PadRight(validSize / 8);
