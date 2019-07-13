@@ -42,7 +42,7 @@ namespace BibliotecaDeClasses.DB
             return conexao;
         }
 
-        public MySqlConnection AbreConexaoBD()
+        private MySqlConnection AbreConexaoBD()
         {
             try
             {
@@ -55,7 +55,7 @@ namespace BibliotecaDeClasses.DB
             return Conexao;
         }
 
-        public void FechaConexaoBD()
+        private void FechaConexaoBD()
         {
             try
             {
