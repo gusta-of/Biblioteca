@@ -86,7 +86,6 @@ namespace BibliotecaDeClasses.DB
             finally
             {
             }
-            return Conexao;
         }
 
         private void FechaConexaoBD()
