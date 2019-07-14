@@ -36,7 +36,7 @@ namespace BibliotecaDeClasses.DB
             if (valor == null)
                 parametro = DBNull.Value;
             if (valor is bool)
-                parametro = (bool)valor ? "S" : "N";
+                parametro = (bool)valor ? 1 : 0;
             if (valor is float)
                 parametro = (double)(float)valor;
             if (valor is DateTime)
