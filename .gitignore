@@ -1,4 +1,11 @@
-.DS_Store
+*.user
 *.suo
-*.exe
-/foo
+*.swo
+*.swp
+*.config
+*.DotSettings
+
+.vs/
+bin/
+obj/
+packages/
