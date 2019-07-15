@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BibliotecaDeClasses.Criptografia
+namespace FernandesDLL.Model
 {
     public class Criptography
     {
