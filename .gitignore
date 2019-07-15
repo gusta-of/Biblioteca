@@ -1,4 +1,3 @@
 /.vs
+/Sever
 *.suo
-*.exe
-/foo
