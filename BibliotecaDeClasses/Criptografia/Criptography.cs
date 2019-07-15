@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BibliotecaDeClasses.Criptografia
+namespace FernandesDLL.Model
 {
     public class Criptography
     {
@@ -35,7 +35,10 @@ namespace BibliotecaDeClasses.Criptografia
                 }
                 else if (keySize < maxSize)
                 {
-                    int validSize = (keySize <= minSize) ? minSize : (keySize - keySize % skipSize) + skipSize;
+                    int validSize = (keySize <= minSize) 
+                        ? minSize 
+                        : (keySize - keySize % skipSize) + skipSize;
+
                     if (keySize < validSize)
                     {
                         key = key.PadRight(validSize / 8);
