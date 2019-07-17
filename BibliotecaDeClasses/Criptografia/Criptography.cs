@@ -19,7 +19,7 @@ namespace FernandesDLL.Model
             return key;
         }
 
-        private byte[] CamuflaKey(RC2CryptoServiceProvider keyRC2)
+        private byte[] GeraRash(RC2CryptoServiceProvider keyRC2)
         {
             var key = string.Empty;
             string salt = string.Empty;
@@ -53,7 +53,7 @@ namespace FernandesDLL.Model
         {
             var KeyCript = new RC2CryptoServiceProvider();
             CriaKey(KeyCript);
-            var alterKey = CamuflaKey(KeyCript);
+            var alterKey = GeraRash(KeyCript);
             KeyCript.Key = alterKey;
 
             try
@@ -78,7 +78,7 @@ namespace FernandesDLL.Model
         {
             var KeyCript = new RC2CryptoServiceProvider();
             CriaKey(KeyCript);
-            var alterKey = CamuflaKey(KeyCript);
+            var alterKey = GeraRash(KeyCript);
             KeyCript.Key = alterKey;
 
             try
