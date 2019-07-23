@@ -55,6 +55,8 @@ build/
 .suo
 
 Bibliotecas/*
+BbibliotecaDeClasses/obj/Debug/*
+BbibliotecaDeClasses/obj/Release/*
 ./Caixa/obj/Debug/**
 ./Caixa/obj/Release/**
 
