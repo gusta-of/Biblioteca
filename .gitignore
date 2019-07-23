@@ -52,8 +52,8 @@ build/
 !**/packages/build/
 **/packages/*
 *.build.csdef
-.suo
 
+.vs/*
 Bibliotecas/*
 BbibliotecaDeClasses/obj/Debug/*
 BbibliotecaDeClasses/obj/Release/*
