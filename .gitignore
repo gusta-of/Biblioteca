@@ -31,14 +31,8 @@
 *.ide
 *.txt
 *.cache
+*.ide
 
-*.ide/
-Debug/
-.vs/
-.vs/Caixa/v16**
-bin/
-packages/*
-v16/*
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -49,16 +43,17 @@ bld/
 [Bb]in/
 [Oo]bj/
 build/
-!**/packages/build/
-**/packages/*
-*.build.csdef
 
+
+bin/*
+bin/Release/*
+bin/Debug/*
+packages/*
+v16/*
 .vs/*
 Bibliotecas/*
 BbibliotecaDeClasses/obj/Debug/*
 BbibliotecaDeClasses/obj/Release/*
-./Caixa/obj/Debug/**
-./Caixa/obj/Release/**
 
 *.VisualState.xml
 TestResult.xml
