@@ -45,6 +45,8 @@ bld/
 build/
 
 
+obj/Debug/*
+obj/Release/*
 bin/*
 bin/Release/*
 bin/Debug/*
