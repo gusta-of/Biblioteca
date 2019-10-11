@@ -5,12 +5,8 @@ using System.Text;
 
 namespace FernandesDLL.Model
 {
-    public class Criptography
+    public class Seguranca
     {
-        public Criptography()
-        {
-        }
-
         private RC2CryptoServiceProvider CriaKey(RC2CryptoServiceProvider key)
         {
             key.IV = new byte[] { 137, 220, 146, 142, 243, 0, 169, 32 };
@@ -18,7 +14,6 @@ namespace FernandesDLL.Model
 
             return key;
         }
-
         private byte[] GeraRash(RC2CryptoServiceProvider keyRC2)
         {
             var key = string.Empty;
@@ -35,8 +30,8 @@ namespace FernandesDLL.Model
                 }
                 else if (keySize < maxSize)
                 {
-                    int validSize = (keySize <= minSize) 
-                        ? minSize 
+                    int validSize = (keySize <= minSize)
+                        ? minSize
                         : (keySize - keySize % skipSize) + skipSize;
 
                     if (keySize < validSize)
@@ -48,8 +43,9 @@ namespace FernandesDLL.Model
             PasswordDeriveBytes PasswaordDey = new PasswordDeriveBytes(key, ASCIIEncoding.ASCII.GetBytes(salt));
             return PasswaordDey.GetBytes(key.Length);
         }
-
-        public string Encrypt(string key)
+        // Resumo:
+        // Recebe uma string por paramêtro e criptografa! 
+        public string Criptografe(string key)
         {
             var KeyCript = new RC2CryptoServiceProvider();
             CriaKey(KeyCript);
@@ -72,9 +68,9 @@ namespace FernandesDLL.Model
                 return e.Message;
             }
         }
-
-
-        public string Decrypt(string key)
+        // Resumo:
+        // Recebe uma string por paramêtro e descriptografa! 
+        public string Descriptografe(string key)
         {
             var KeyCript = new RC2CryptoServiceProvider();
             CriaKey(KeyCript);
@@ -97,12 +93,8 @@ namespace FernandesDLL.Model
                 return e.Message;
             }
         }
-
-        public T Cast<T>(Type typeObject)
-        {
-            return (T)Activator.CreateInstance(typeObject);
-        }
-
+        // Resumo:
+        // Recebe uma string por paramêtro gera um Hash, Ideal para Tokens! 
         public string GeraHashMD5(string key)
         {
             MD5 md5 = System.Security.Cryptography.MD5.Create();
