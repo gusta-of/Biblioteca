@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionContext\ArmezenDeSessao.cs" />
+    <Compile Include="ConnectionContext\ManipuladorDeContexto.cs" />
     <Compile Include="Criptografia\Seguranca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
