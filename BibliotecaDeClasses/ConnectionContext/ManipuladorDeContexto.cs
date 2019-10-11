@@ -9,11 +9,10 @@ namespace BibliotecaDeClasses.ConnectionContext
     public class ManipuladorDeContexto
     {
         private static ManipuladorDeContexto _instancia = null;
-
         public ArmezenDeContexto Sessoes { get; private set; }
         //Resumo:
         //  Retorna uma instancia estatica do manupulador de contexto que contem um armazen de contexto
-        public static ManipuladorDeContexto Instancia
+        public static ManipuladorDeContexto Current
         {
             get
             {
