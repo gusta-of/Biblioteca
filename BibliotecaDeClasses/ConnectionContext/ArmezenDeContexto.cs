@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeClasses.ConnectionContext
 {
-    public class ArmezenDeSessao
+    public class ArmezenDeContexto
     {
         private static Dictionary<string, object> _sessoes = null;
 
