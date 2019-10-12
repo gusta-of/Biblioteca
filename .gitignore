@@ -45,11 +45,8 @@ bld/
 build/
 
 
-obj/Debug/*
-obj/Release/*
+obj/*
 bin/*
-bin/Release/*
-bin/Debug/*
 packages/*
 v16/*
 .vs/*
