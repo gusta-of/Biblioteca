@@ -43,13 +43,12 @@ bld/
 [Bb]in/
 [Oo]bj/
 build/
-
+.vs/
 
 obj/*
 bin/*
 packages/*
 v16/*
-.vs/*
 Bibliotecas/*
 BbibliotecaDeClasses/obj/Debug/*
 BbibliotecaDeClasses/obj/Release/*
