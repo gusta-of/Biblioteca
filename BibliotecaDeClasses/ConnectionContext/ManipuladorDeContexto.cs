@@ -10,8 +10,9 @@ namespace BibliotecaDeClasses.ConnectionContext
     {
         private static ManipuladorDeContexto _instancia = null;
         public ArmezenDeContexto Sessoes { get; private set; }
-        ///Resumo:
-        ///  Retorna uma instancia estatica do manupulador de contexto que contem um armazen de contexto
+        /// <summary>
+        /// Resumo: Retorna uma instancia estatica do manupulador de contexto que contem um armazen de contexto
+        /// </summary>
         public static ManipuladorDeContexto Current
         {
             get
@@ -27,8 +28,9 @@ namespace BibliotecaDeClasses.ConnectionContext
                 return _instancia;
             }
         }
-        ///Resumo:
-        ///  Cria o armazem de contexto
+        /// <summary>
+        /// Resumo: Cria o armazem de contexto
+        /// </summary>
         public void CrieArmazenDeContexto() => Sessoes = new ArmezenDeContexto();
 
     }
