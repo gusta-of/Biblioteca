@@ -11,8 +11,8 @@ namespace BibliotecaDeClasses.ConnectionContext
     {
         private static Dictionary<string, object> _sessoes = null;
 
-        //Resumo:
-        // Armazena os contextos passado via atribuiçao pela classe manupuladora
+        ///Resumo:
+        /// Armazena os contextos passado via atribuiçao pela classe manupuladora
         public object this[string key]
         {
             get
@@ -35,17 +35,17 @@ namespace BibliotecaDeClasses.ConnectionContext
             }
         }
 
-        //Resumo:
-        // Retorna a quantidade de contextos guardados!
+        ///Resumo:
+        /// Retorna a quantidade de contextos guardados!
         public int Count => _sessoes.Any() ? _sessoes.Count() : 0;
-        //Resumo:
-        // Retorna o IEnumerable das sessões
+        ///Resumo:
+        /// Retorna o IEnumerable das sessões
         public IEnumerator GetEnumerator() => _sessoes.GetEnumerator();
-        //Resumo:
-        //  Remove o contexto armazenado em memoria
+        ///Resumo:
+        ///  Remove o contexto armazenado em memoria
         public void Remove(string key) => _sessoes.Remove(key);
-        //Resuma:
-        //  Remove todos os contextos arazenados na memória!
+        ///Resuma:
+        ///  Remove todos os contextos arazenados na memória!
         public void RemoveAll(string key) => _sessoes = new Dictionary<string, object>();
     }
 }
