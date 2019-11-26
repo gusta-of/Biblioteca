@@ -9,7 +9,7 @@ namespace BibliotecaDeClasses.ConnectionContext
 {
     public class ContextArray : IDisposable
     {
-        private static Dictionary<string, object> _sessoes = null;
+        private static Dictionary<string, dynamic> _sessoes = null;
 
         ~ContextArray()
         {
@@ -27,13 +27,13 @@ namespace BibliotecaDeClasses.ConnectionContext
         ///<summary> 
         /// Resumo: Armazena os contextos passado via atribuiçao pela classe manupuladora
         ///</summary>
-        public object this[string key]
+        public dynamic this[string key]
         {
             get
             {
                 if (_sessoes == null)
                 {
-                    _sessoes = new Dictionary<string, object>();
+                    _sessoes = new Dictionary<string, dynamic>();
                 }
 
                 if(_sessoes.Any() && _sessoes.ContainsKey(key))
@@ -43,6 +43,7 @@ namespace BibliotecaDeClasses.ConnectionContext
 
                 return null;
             }
+
             set 
             { 
                 _sessoes.Add(key, value); 
