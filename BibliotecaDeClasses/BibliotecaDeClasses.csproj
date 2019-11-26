@@ -78,6 +78,8 @@
     <Compile Include="Criptografia\CriptographProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\Conversao\Converter.cs" />
+    <Compile Include="Utilidades\Enumerable\AbstractEnumerable.cs" />
+    <Compile Include="Utilidades\Enumerable\IEnumerable.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
