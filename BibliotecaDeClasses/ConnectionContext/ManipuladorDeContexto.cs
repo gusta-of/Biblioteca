@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeClasses.ConnectionContext
 {
-    public class ManipuladorDeContexto
+    public class ManipuladorDeContexto : IDisposable
     {
         private static ManipuladorDeContexto _instancia = null;
-        public ArmezenDeContexto Sessoes { get; private set; }
+        public ArrayConnection Sessoes { get; private set; }
+
+        ~ManipuladorDeContexto()
+        {
+            Dispose();
+        }
+
         /// <summary>
         /// Resumo: Retorna uma instancia estatica do manupulador de contexto que contem um armazen de contexto
         /// </summary>
@@ -31,7 +37,15 @@ namespace BibliotecaDeClasses.ConnectionContext
         /// <summary>
         /// Resumo: Cria o armazem de contexto
         /// </summary>
-        public void CrieArmazenDeContexto() => Sessoes = new ArmezenDeContexto();
+        public void CrieArmazenDeContexto() => Sessoes = new ArrayConnection();
 
+        public void Dispose()
+        {
+            if (_instancia != null)
+            {
+                Current.Sessoes.Dispose();
+                _instancia = null;
+            }
+        }
     }
 }

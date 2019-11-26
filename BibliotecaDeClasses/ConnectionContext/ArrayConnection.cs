@@ -7,9 +7,22 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeClasses.ConnectionContext
 {
-    public class ArmezenDeContexto
+    public class ArrayConnection : IDisposable
     {
         private static Dictionary<string, object> _sessoes = null;
+
+        ~ArrayConnection()
+        {
+            Dispose();
+        }
+
+        public void Dispose()
+        {
+            if(_sessoes != null || _sessoes.Any())
+            {
+                _sessoes = null;
+            }
+        }
 
         ///<summary> 
         /// Resumo: Armazena os contextos passado via atribuiçao pela classe manupuladora
@@ -40,6 +53,7 @@ namespace BibliotecaDeClasses.ConnectionContext
         /// Resumo: Retorna a quantidade de contextos guardados!
         /// </summary>
         public int Count => _sessoes.Any() ? _sessoes.Count() : 0;
+
         /// <summary>
         /// Resumo: Retorna o IEnumerable das sessões
         /// </summary>
@@ -51,6 +65,6 @@ namespace BibliotecaDeClasses.ConnectionContext
         /// <summary>
         /// Resuma: Remove todos os contextos arazenados na memória!
         /// </summary>
-        public void RemoveAll(string key) => _sessoes = new Dictionary<string, object>();
+        public void RemoveAll() => _sessoes = new Dictionary<string, object>();
     }
 }
