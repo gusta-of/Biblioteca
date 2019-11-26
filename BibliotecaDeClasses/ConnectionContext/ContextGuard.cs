@@ -2,12 +2,12 @@
 
 namespace BibliotecaDeClasses.ConnectionContext
 {
-    public class Context : IDisposable
+    public class ContextGuard : IDisposable
     {
-        private static Context _instancia = null;
-        public ArrayConnection Sessoes { get; private set; }
+        private static ContextGuard _instancia = null;
+        public ContextArray Sessoes { get; private set; }
 
-        ~Context()
+        ~ContextGuard()
         {
             Dispose();
         }
@@ -15,7 +15,7 @@ namespace BibliotecaDeClasses.ConnectionContext
         /// <summary>
         /// Resumo: Retorna uma instancia estatica do manupulador de contexto que contem um armazen de contexto
         /// </summary>
-        public static Context Current
+        public static ContextGuard Current
         {
             get
             {
@@ -23,7 +23,7 @@ namespace BibliotecaDeClasses.ConnectionContext
                 {
                     if (_instancia == null)
                     {
-                        _instancia = new Context();
+                        _instancia = new ContextGuard();
                     }
                 }
 
@@ -33,7 +33,7 @@ namespace BibliotecaDeClasses.ConnectionContext
         /// <summary>
         /// Resumo: Cria o armazem de contexto
         /// </summary>
-        public void CrieArmazenDeContexto() => Sessoes = new ArrayConnection();
+        public void CrieArmazenDeContexto() => Sessoes = new ContextArray();
 
         public void Dispose()
         {

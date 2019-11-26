@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FernandesDLL.Model
 {
-    public class Seguranca
+    public class CriptographProvider
     {
         private RC2CryptoServiceProvider CriaKey(RC2CryptoServiceProvider key)
         {

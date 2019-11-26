@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeClasses.ConnectionContext
 {
-    public class ArrayConnection : IDisposable
+    public class ContextArray : IDisposable
     {
         private static Dictionary<string, object> _sessoes = null;
 
-        ~ArrayConnection()
+        ~ContextArray()
         {
             Dispose();
         }
