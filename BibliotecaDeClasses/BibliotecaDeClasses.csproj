@@ -73,10 +73,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionContext\ArmezenDeContexto.cs" />
-    <Compile Include="ConnectionContext\ManipuladorDeContexto.cs" />
+    <Compile Include="ConnectionContext\ArrayConnection.cs" />
+    <Compile Include="ConnectionContext\Context.cs" />
     <Compile Include="Criptografia\Seguranca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\Conversao\Converter.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
