@@ -1,8 +1,10 @@
-﻿using System;
+﻿using BibliotecaDeClasses.Utilidades.Attributs;
+using System;
 using System.Globalization;
 
 namespace BibliotecaDeClasses.Utilidades.Conversao
 {
+    [Author("Gustavo de Oliveira Fernandes", Version = 1.0)]
     public class Converter
     {
         public static TimeSpan ConvertToTimeSpan(string time)

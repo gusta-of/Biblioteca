@@ -1,10 +1,12 @@
-﻿using System;
+﻿using BibliotecaDeClasses.Utilidades.Attributs;
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace FernandesDLL.Model
 {
+    [Author("Gustavo de Oliveira Fernandes", Version = 1.1)]
     public class CriptographProvider
     {
         private RC2CryptoServiceProvider CriaKey(RC2CryptoServiceProvider key)

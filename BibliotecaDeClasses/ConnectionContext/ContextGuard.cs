@@ -1,7 +1,9 @@
-﻿using System;
+﻿using BibliotecaDeClasses.Utilidades.Attributs;
+using System;
 
 namespace BibliotecaDeClasses.ConnectionContext
 {
+    [Author("Gustavo de Oliveira Fernandes", Version = 1.1)]
     public class ContextGuard : IDisposable
     {
         private static ContextGuard _instancia = null;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaDeClasses.Utilidades.Attributs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeClasses.Utilidades.Enumerable
 {
+    [Author("Gustavo de Oliveira Fernandes", Version = 1.0)]
     public abstract class AbstractEnumerable<T, K> : IEnumerable<K>, IComparable where T : IEnumerable<K>
     {
         private Func<string> _descricaoDelegate;
