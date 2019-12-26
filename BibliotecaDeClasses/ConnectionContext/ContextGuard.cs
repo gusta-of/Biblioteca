@@ -6,8 +6,8 @@ namespace BibliotecaDeClasses.ConnectionContext
     [Author("Gustavo de Oliveira Fernandes", Version = 1.1)]
     public class ContextGuard : IDisposable
     {
-        private static ContextGuard _instancia = null;
-        public ContextArray Sessoes { get; private set; }
+        private static ContextGuard _instance = null;
+        public ContextArray Sessions { get; private set; }
 
         ~ContextGuard()
         {
@@ -15,7 +15,7 @@ namespace BibliotecaDeClasses.ConnectionContext
         }
 
         /// <summary>
-        /// Resumo: Retorna uma instancia estatica do manupulador de contexto que contem um armazen de contexto
+        /// Resumo: Retorna uma instancia estática que contém a coleção de sessões criadas
         /// </summary>
         public static ContextGuard Current
         {
@@ -23,26 +23,26 @@ namespace BibliotecaDeClasses.ConnectionContext
             {
                 lock (new object())
                 {
-                    if (_instancia == null)
+                    if (_instance == null)
                     {
-                        _instancia = new ContextGuard();
+                        _instance = new ContextGuard();
                     }
                 }
 
-                return _instancia;
+                return _instance;
             }
         }
         /// <summary>
-        /// Resumo: Cria o armazem de contexto
+        /// Resumo: Cria a instancia única para a coleção que conterá todas as sessões
         /// </summary>
-        public void CrieArmazenDeContexto() => Sessoes = new ContextArray();
+        public void Create() => Sessions = new ContextArray();
 
         public void Dispose()
         {
-            if (_instancia != null)
+            if (_instance != null)
             {
-                Current.Sessoes.Dispose();
-                _instancia = null;
+                Current.Sessions.Dispose();
+                _instance = null;
             }
         }
     }

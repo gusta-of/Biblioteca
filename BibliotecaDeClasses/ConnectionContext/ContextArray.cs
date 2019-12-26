@@ -9,7 +9,7 @@ namespace BibliotecaDeClasses.ConnectionContext
     [Author("Gustavo de Oliveira Fernandes", Version = 1.1)]
     public class ContextArray : IDisposable
     {
-        private static Dictionary<string, dynamic> _sessoes = null;
+        private static Dictionary<string, dynamic> _sessions = null;
 
         ~ContextArray()
         {
@@ -18,27 +18,27 @@ namespace BibliotecaDeClasses.ConnectionContext
 
         public void Dispose()
         {
-            if(_sessoes != null || _sessoes.Any())
+            if(_sessions != null || _sessions.Any())
             {
-                _sessoes = null;
+                _sessions = null;
             }
         }
 
         ///<summary> 
-        /// Resumo: Armazena os contextos passado via atribuiçao pela classe manupuladora
+        /// Resumo: Armazena todo e qualquer contexto passado, por ser uma referencia dinâmica será ignorado o tipo
         ///</summary>
         public dynamic this[string key]
         {
             get
             {
-                if (_sessoes == null)
+                if (_sessions == null)
                 {
-                    _sessoes = new Dictionary<string, dynamic>();
+                    _sessions = new Dictionary<string, dynamic>();
                 }
 
-                if(_sessoes.Any() && _sessoes.ContainsKey(key))
+                if(_sessions.Any() && _sessions.ContainsKey(key))
                 {
-                    return _sessoes[key];
+                    return _sessions[key];
                 }
 
                 return null;
@@ -46,26 +46,26 @@ namespace BibliotecaDeClasses.ConnectionContext
 
             set 
             { 
-                _sessoes.Add(key, value); 
+                _sessions.Add(key, value); 
             }
         }
 
         /// <summary>
-        /// Resumo: Retorna a quantidade de contextos guardados!
+        /// Resumo: Retorna a quantidade de sessões guardadas!
         /// </summary>
-        public int Count => _sessoes.Any() ? _sessoes.Count() : 0;
+        public int Count => _sessions.Any() ? _sessions.Count() : 0;
 
         /// <summary>
-        /// Resumo: Retorna o IEnumerable das sessões
+        /// Resumo: Retorna o IEnumerator da coleção de sessões
         /// </summary>
-        public IEnumerator GetEnumerator() => _sessoes.GetEnumerator();
+        public IEnumerator GetEnumerator() => _sessions.GetEnumerator();
         /// <summary>
         /// Resumo: Remove o contexto armazenado em memoria
         /// </summary>
-        public void Remove(string key) => _sessoes.Remove(key);
+        public void Remove(string key) => _sessions.Remove(key);
         /// <summary>
         /// Resuma: Remove todos os contextos arazenados na memória!
         /// </summary>
-        public void RemoveAll() => _sessoes = new Dictionary<string, object>();
+        public void RemoveAll() => _sessions = new Dictionary<string, object>();
     }
 }
