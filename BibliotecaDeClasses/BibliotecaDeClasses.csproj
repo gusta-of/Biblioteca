@@ -81,6 +81,7 @@
     <Compile Include="Utilidades\Conversao\Converter.cs" />
     <Compile Include="Utilidades\Enumerable\AbstractEnumerable.cs" />
     <Compile Include="Utilidades\Enumerable\IEnumerable.cs" />
+    <Compile Include="Utilidades\serialization\Serializable.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
